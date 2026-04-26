@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    direction: rtl;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-canvas text-ink font-sans;
+    font-feature-settings: 'ss01', 'ss02';
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+
+  ::selection {
+    background: #0B0F19;
+    color: #F8F7F3;
+  }
+
+  :focus-visible {
+    outline: 2px solid #C89B3C;
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-midnight px-5 py-3 text-sm font-medium text-canvas transition hover:bg-ink active:scale-[0.98] disabled:opacity-50;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gold px-5 py-3 text-sm font-semibold text-midnight transition hover:bg-[#b6892d] active:scale-[0.98] disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-white px-5 py-3 text-sm font-medium text-ink transition hover:border-midnight/40;
+  }
+
+  .btn-whats {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-600/20 bg-emerald-600/5 px-4 py-2.5 text-sm font-medium text-emerald-700 transition hover:bg-emerald-600/10;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink placeholder:text-ink/40 focus:border-midnight/40 focus:outline-none;
+  }
+
+  .label {
+    @apply mb-1.5 block text-xs font-medium text-ink/70;
+  }
+
+  .card {
+    @apply rounded-2xl border border-line bg-white shadow-card;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-2.5 py-1 text-[11px] font-medium text-ink/70;
+  }
+
+  .badge-gold {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-gold/10 px-2.5 py-1 text-[11px] font-medium text-[#8a6a25];
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-lg border border-line bg-white px-2.5 py-1 text-[11px] text-ink/70;
+  }
+
+  .section-title {
+    @apply text-2xl sm:text-3xl font-bold text-midnight;
+  }
+
+  .section-eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-gold;
+  }
+}
+
+/* slim scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d6d2c5;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b9b4a5;
+}
